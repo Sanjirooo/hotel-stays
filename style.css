@@ -1,0 +1,249 @@
+/* Warna dan ukuran dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #faf7f0;
+  color: #333;
+  line-height: 1.6;
+}
+a { color: #245344; text-decoration: none; }
+img { max-width: 100%; background: #e3e9e1; color: #333; }
+input, select, textarea, button { font: inherit; }
+h1, h2, h3, h4 { line-height: 1.3; }
+h2 { font-size: 30px; margin-bottom: 16px; }
+p { margin-bottom: 14px; }
+[id] { scroll-margin-top: 20px; }
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #a78039;
+  outline-offset: 3px;
+}
+/* Navbar dan sambutan */
+.header, .contactcontainer {
+  position: relative;
+  color: white;
+  background: linear-gradient(#173b30aa, #173b30aa), url('Image/hotel-bali.jpg') center/cover;
+  background-color: #345c4b;
+}
+.header { min-height: 520px; }
+.navbarcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 6%;
+  width: 100%;
+  background: #204c3d;
+}
+.logo { font-size: 23px; font-weight: bold; }
+.logo span { display: block; font-size: 12px; font-weight: normal; color: #ede3ca; }
+.navbar { list-style: none; display: flex; flex-wrap: wrap; gap: 24px; }
+.navbar a { color: white; font-size: 14px; }
+.navbar a:hover, .navbar a.active { color: #edcf94; }
+.textkiriheader { max-width: 1120px; margin: auto; padding: 95px 24px 110px; }
+.textkiriheader h2 { font-size: 18px; color: #f1e5c9; }
+.textkiriheader h1 { font-size: 42px; line-height: 1.2; max-width: 650px; }
+.textkiriheader p { margin-top: 20px; max-width: 600px; }
+.play-btn, .play-button, .searchdesti-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #fff;
+  color: #245344;
+  font-size: 23px;
+}
+.play-btn { position: absolute; top: 55%; right: 10%; }
+.play-btn:hover, .play-button:hover { background: #ede3ca; }
+/* Popup video tetap menggunakan :target, tanpa JavaScript. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #000c;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+.overlay:target { display: flex; }
+.popup-content { position: relative; width: 100%; max-width: 800px; background: #17251e; border-radius: 6px; padding: 48px 16px 16px; color: white; }
+.popup-content video { display: block; width: 100%; max-height: 65vh; aspect-ratio: 16 / 9; background: #111; }
+.popup-content p { font-size: 13px; margin: 12px 0 0; }
+.close-button { position: absolute; top: 0; right: 18px; color: white; font-size: 32px; }
+/* Form contoh dan tombol */
+.boxpencariancontainer { position: relative; width: 90%; max-width: 1120px; margin: -32px auto 0; background: white; padding: 22px; border-radius: 6px; box-shadow: 0 3px 12px #0001; }
+.Halaman { display: flex; gap: 10px; margin-bottom: 18px; }
+.kotakjudul { display: inline-block; padding: 8px 18px; border-radius: 4px; background: #edf1eb; }
+.kotakjudul.active { background: #245344; color: white; }
+.bagianpencarian { display: flex; align-items: flex-end; gap: 16px; }
+.blokpencarian { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.blokpencarian label { font-size: 12px; font-weight: bold; margin-bottom: 6px; color: #245344; }
+.blokpencarian input, .blokpencarian select { width: 100%; min-width: 0; padding: 10px; border: 1px solid #cdd5cb; border-radius: 4px; background: white; font-size: 14px; }
+.search-button, .search-destination, .search-1, .search-2, .btn, .pertanyaan-btn, .buttonsend {
+  display: inline-block;
+  background: #245344;
+  color: white;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+.search-button:hover, .search-destination:hover, .search-1:hover, .search-2:hover,
+.btn:hover, .pertanyaan-btn:hover, .buttonsend:hover { background: #163b2f; }
+.catatan { font-size: 12px; color: #5a635a; margin: 16px 0 0; }
+/* Perkenalan dan hotel unggulan: susunan dua kolom asli. */
+.pilihantravel { display: flex; gap: 40px; max-width: 1120px; margin: 64px auto; padding: 0 24px; align-items: center; }
+.textkanancard { flex: 1; min-width: 0; }
+.textkanancard h4, .aboutcontent h4 { color: #245344; font-size: 16px; margin-bottom: 12px; }
+.button-group { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+.button-group h3 { font-size: 14px; }
+.searchdesti-btn { width: 42px; height: 42px; font-size: 17px; background: #245344; color: white; }
+.tour-carddesti { position: relative; width: 44%; border-radius: 6px; overflow: hidden; background: white; box-shadow: 0 2px 8px #0001; }
+.tour-carddesti img { display: block; width: 100%; height: 230px; object-fit: cover; }
+.price-labeldesti, .price-label { position: absolute; top: 12px; left: 12px; background: #245344; color: white; padding: 6px 10px; font-size: 13px; border-radius: 4px; }
+.tour-infodesti { padding: 20px; }
+.title-stars { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.title-stars h3 { font-size: 20px; }
+.starsdesti, .stars { color: #927021; letter-spacing: 1px; }
+.iconsdesti, .icons { display: flex; gap: 12px; flex-wrap: wrap; font-size: 13px; color: #596459; margin: 12px 0; }
+.divider { border-left: 1px solid #d5ddd3; }
+.tour-infodesti p { font-size: 14px; }
+.search-1 { background: #e8eee5; color: #245344; }
+.search-1:hover { color: white; }
+.search-2 { margin-left: 8px; }
+/* Empat destinasi dan enam kartu penginapan */
+.destinations { background: #edf0e7; padding: 48px 24px; }
+.JUDULDESTINASI, .JUDULTOUR, .JUDULTESTIMONI { text-align: center; margin-bottom: 28px; }
+.subtitle, .bagianblog > h3 { display: block; color: #245344; font-size: 16px; margin-bottom: 8px; }
+.destination-cards { display: flex; gap: 20px; max-width: 1072px; margin: auto; }
+.destination-card { position: relative; flex: 1; min-width: 0; overflow: hidden; border-radius: 6px; background: white; }
+.destination-card img { width: 100%; height: 230px; display: block; object-fit: cover; }
+.namacard { padding: 14px 16px 0; font-size: 19px; font-weight: bold; }
+.cardfooter { padding: 4px 16px 16px; font-size: 13px; color: #596459; }
+.tour-destinations { max-width: 1120px; margin: 60px auto; padding: 0 24px; }
+.tourcontainer { display: flex; flex-wrap: wrap; gap: 24px; }
+.tour-card { position: relative; width: calc((100% - 48px) / 3); border-radius: 6px; overflow: hidden; background: white; box-shadow: 0 2px 8px #0001; }
+.tour-card img { width: 100%; height: 220px; display: block; object-fit: cover; }
+.tour-info { padding: 20px; text-align: left; }
+.days { display: block; font-size: 12px; color: #245344; margin-bottom: 8px; }
+.tour-info h3 { font-size: 19px; margin-bottom: 8px; }
+.tour-info p { font-size: 14px; color: #596459; }
+/* Video dan tentang */
+.video2 { margin: 56px 0; }
+.videocontainer { position: relative; height: 320px; }
+.videocontainer > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.aboutcontainer { display: flex; gap: 40px; align-items: center; max-width: 1120px; margin: 40px auto 0; padding: 0 24px; }
+.aboutimage, .aboutcontent { flex: 1; min-width: 0; }
+.aboutimage img { width: 100%; height: 320px; display: block; object-fit: cover; border-radius: 6px; }
+/* Tiga testimoni dan tiga blog */
+.bagiantestimoni { background: #edf0e7; padding: 48px 24px; }
+.testimonial-cards, .blogcontainer { display: flex; gap: 24px; max-width: 1072px; margin: auto; }
+.kartu { flex: 1; min-width: 0; padding: 24px; border-radius: 6px; background: white; box-shadow: 0 2px 8px #0001; }
+.stars { margin-bottom: 12px; }
+.pengkomentar { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+.pengkomentar img { width: 48px; height: 48px; object-fit: cover; border-radius: 50%; }
+.pengkomentar h4 { font-size: 15px; }
+.pengkomentar span { font-size: 12px; color: #596459; }
+.bagianblog { padding: 56px 24px; text-align: center; }
+.bagianblog > h2 { margin-bottom: 28px; }
+.blog-card { flex: 1; min-width: 0; position: relative; overflow: hidden; border-radius: 6px; background: white; box-shadow: 0 2px 8px #0001; }
+.blog-card img { width: 100%; height: 210px; display: block; object-fit: cover; }
+.datebox { position: absolute; top: 10px; left: 10px; display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #245344; color: white; }
+.datebox .day { font-size: 26px; line-height: 1.2; }
+.month-year { font-size: 11px; line-height: 1.2; text-align: left; }
+.kontenblog { padding: 20px; text-align: left; }
+.kontenblog h4 { margin-bottom: 12px; font-size: 18px; }
+.kontenblog p { font-size: 14px; margin-bottom: 0; }
+/* Banner dan footer bersama */
+.bagianpertanyaan { padding: 0 24px 56px; }
+.boxpertanyaan { max-width: 1072px; margin: auto; border-radius: 6px; text-align: center; background: #e4eadf; padding: 36px 24px; }
+.boxpertanyaan h2 { font-size: 26px; }
+.footer { background: #204c3d; color: #f5f5ed; padding-top: 40px; }
+.footercontainer { display: flex; gap: 30px; max-width: 1120px; margin: auto; padding: 0 24px 36px; }
+.footercol { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.footercol h3 { color: white; font-size: 17px; margin-bottom: 16px; }
+.footercol p, .footercol a { color: #e4eadd; font-size: 13px; }
+.footercol ul { list-style: none; }
+.footercol li { margin-bottom: 6px; }
+.footer a:hover { color: #edcf94; text-decoration: underline; }
+.socialicons { display: flex; flex-wrap: wrap; gap: 12px; }
+.footerbottom { background: #163b2f; padding: 20px 6%; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 12px; }
+.footerbottom p { margin: 0; }
+.navbarcontainer1 { margin-left: auto; }
+.navbar1 { list-style: none; display: flex; gap: 16px; flex-wrap: wrap; }
+.navbar1 a { color: white; }
+/* Halaman kontak: empat kotak, foto dan form asli. */
+.contactcontainer { min-height: 320px; }
+.contentbawah { padding: 55px 24px; text-align: center; }
+.navbartengahbawah { margin-bottom: 12px; }
+.navbartengahbawah a { color: white; }
+.judulhalaman { font-size: 38px; }
+.contactmain { max-width: 1120px; margin: auto; padding: 44px 24px; }
+.infocontact { display: flex; gap: 20px; }
+.boxinfo { flex: 1; min-width: 0; padding: 24px 14px; text-align: center; border-radius: 6px; background: white; border: 1px solid #e0e5da; overflow-wrap: anywhere; }
+.boxinfo h4 { color: #245344; margin-bottom: 10px; }
+.boxinfo p { font-size: 13px; margin: 0; }
+.contactbody { display: flex; gap: 40px; align-items: flex-start; margin: 36px 0 12px; }
+.contactbagiankiri, .contactkanan { flex: 1; min-width: 0; }
+.contactbagiankiri img { display: block; width: 100%; height: 340px; object-fit: cover; border-radius: 6px; }
+.identitas { margin-top: 20px; }
+.idcard { list-style: none; }
+.idcard li { display: flex; gap: 8px; margin: 8px 0; font-size: 14px; }
+.idcard b { min-width: 48px; }
+.contactform { padding: 24px; background: white; border: 1px solid #e0e5da; border-radius: 6px; }
+.contactform h2 { font-size: 24px; }
+.contactform .catatan { margin: 0 0 20px; }
+.contactform label { display: block; font-size: 14px; margin-bottom: 6px; }
+.contactform input, .contactform textarea { width: 100%; padding: 10px 12px; margin-bottom: 16px; border: 1px solid #cdd5cb; border-radius: 4px; font-size: 14px; }
+.contactform textarea { resize: vertical; }
+/* Pada layar kecil, kolom turun agar tetap terbaca. */
+@media (max-width: 900px) {
+  .navbarcontainer { flex-wrap: wrap; }
+  .bagianpencarian { flex-wrap: wrap; }
+  .blokpencarian { flex: 1 1 40%; }
+  .pilihantravel { gap: 24px; }
+  .textkiriheader h1 { font-size: 36px; max-width: 520px; }
+  .play-btn { right: 6%; top: auto; bottom: 48px; }
+  .destination-cards, .infocontact, .footercontainer { flex-wrap: wrap; }
+  .destination-card, .boxinfo, .footercol { flex: 1 1 40%; }
+  .tour-card { width: calc((100% - 24px) / 2); }
+  .testimonial-cards, .blogcontainer { gap: 14px; }
+  .kartu { padding: 16px; }
+  .aboutcontainer, .contactbody { gap: 24px; }
+}
+@media (max-width: 600px) {
+  h2 { font-size: 25px; }
+  .navbarcontainer { padding: 18px 20px; gap: 16px; }
+  .navbar { gap: 10px 18px; }
+  .navbar a { font-size: 13px; }
+  .header { min-height: 480px; }
+  .textkiriheader { padding: 50px 24px 120px; }
+  .textkiriheader h1 { font-size: 32px; }
+  .textkiriheader h2 { font-size: 16px; }
+  .play-btn { width: 44px; height: 44px; bottom: 54px; left: 24px; }
+  .boxpencariancontainer { padding: 18px; }
+  .blokpencarian { flex-basis: 100%; }
+  .pilihantravel, .aboutcontainer, .contactbody, .testimonial-cards, .blogcontainer { flex-direction: column; }
+  .pilihantravel, .tour-destinations { margin: 40px auto; }
+  .tour-carddesti, .tour-card, .kartu, .blog-card, .contactbagiankiri, .contactkanan { width: 100%; }
+  .destination-card, .boxinfo, .footercol { flex-basis: 100%; }
+  .destination-card img { height: 210px; }
+  .videocontainer { height: 230px; }
+  .aboutimage { width: 100%; }
+  .aboutimage img { height: 260px; }
+  .contactform { padding: 18px; }
+  .contactbagiankiri img { height: 300px; }
+  .navbarcontainer1 { margin-left: 0; }
+  .footerbottom { gap: 12px; }
+}
